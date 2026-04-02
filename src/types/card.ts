@@ -94,3 +94,4 @@ export function getColor(suit: Suit): Color {
 export function getCardId(suit: Suit, rank: Rank): string {
   return `${suit}-${rank}`;
 }
+export default Card;
