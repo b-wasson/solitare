@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Faculty Glyphic', serif;
+}
+
+body {
+    font-family: "Faculty Glyphic", serif;
+    background: #111;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+}
+
+#startscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#startscreen h1 {
+    font-size: 3em;
+    font-weight: 900;
+    color: #eee;
+}
