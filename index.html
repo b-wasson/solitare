@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benjamin Wasson</title>
+  <title>Klondike Solitare</title>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,8 +10,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <div id="startscreen">
     <h1 class="title">Solitare</h1>
     <button id="start-button">Start Game</button>
   </div>
+  
+  <div id="gameboard">  
+    <div id="top-row">
+      <div id="stock" class="card-slot"></div>
+      <div id="waste" class="card-slot"></div>
+    </div>
+    
+    <div id="foundations">
+      <div id="foundation-0" class="card-slot foundation"></div>
+      <div id="foundation-1" class="card-slot foundation"></div>
+      <div id="foundation-2" class="card-slot foundation"></div>
+      <div id="foundation-3" class="card-slot foundation"></div>
+    </div>
+    
+    <div id="tableau">
+      <div id="tableau-0" class="card-slot tableau-col"></div>
+      <div id="tableau-1" class="card-slot tableau-col"></div>
+      <div id="tableau-2" class="card-slot tableau-col"></div>
+      <div id="tableau-3" class="card-slot tableau-col"></div>
+      <div id="tableau-4" class="card-slot tableau-col"></div>
+      <div id="tableau-5" class="card-slot tableau-col"></div>
+      <div id="tableau-6" class="card-slot tableau-col"></div>
+    </div>
+
+ </div>
+<script src="js/script.js"></script>
 </body>

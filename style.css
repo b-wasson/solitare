@@ -27,3 +27,45 @@ body {
     font-weight: 900;
     color: #eee;
 }
+
+#gameboard {
+    display: none;
+    flex-direction: column;  
+    gap: 20px;
+    padding: 20px;
+}
+
+#top-row {
+    display: flex;
+    flex-direction: row;  
+    gap: 10px;
+}
+
+#tableau {
+    display: flex;
+    flex-direction: row;    
+    gap: 10px;
+    align-items: flex-start; 
+}
+
+#stock-waste {
+    display: flex;
+    gap: 10px;
+}
+
+#foundations {
+    display: flex;
+    gap: 10px;
+}
+
+
+.card-slot { 
+    width: 80px;
+    height: 120px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+}
