@@ -1,6 +1,8 @@
 class Deck {
+    
     constructor() {
         this.build();
+        this.shuffle();
     }
 
     build() { 
@@ -11,6 +13,14 @@ class Deck {
             for (let value of values) {
                 this.cards.push({ suit, value, faceUp: false});
             }
+        }
+    }
+
+    shuffle() { 
+        //fisher-yates shuffle algorithm wow
+        for (let i = this.cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
         }
     }
 }

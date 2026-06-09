@@ -48,6 +48,13 @@ body {
     align-items: flex-start; 
 }
 
+.tableau-col {
+    height: auto; 
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
 #stock-waste {
     display: flex;
     gap: 10px;
@@ -68,4 +75,15 @@ body {
     justify-content: center;
     align-items: center;
     background: #222;
+}
+
+.card { 
+  width: 80px;
+  height: auto;
+  margin-top: -60px;
+  font-family: monospace;
+}
+
+.card:first-child {
+  margin-top: 0;
 }
