@@ -17,6 +17,8 @@ function createCardElement(rank, suit, isHalf = false) {
     const bottom = "└─────────┘";
     const side =   "│         │";
 
+    const back = "░░░░░░░░░░░░░░"
+    
     let rankLineLeft, rankLineRight;
     if (rank === '10') {
         rankLineLeft =  `│${rank}${suit}      │`;
@@ -27,11 +29,13 @@ function createCardElement(rank, suit, isHalf = false) {
     }
 
     const lines = isHalf
-        ? [top, rankLineLeft, side]
+        ? [top, rankLineLeft]
         : [top, rankLineLeft, side, side, side, rankLineRight, bottom];
 
     const pre = document.createElement('pre');
+    const isRed = suit === '♥' || suit === '♦';
     pre.classList.add('card');
+    pre.classList.add(isRed ? 'card-red' : 'card-black');
     pre.textContent = lines.join('\n');
     return pre;
 }
@@ -45,17 +49,17 @@ function getCardDisplay(card) {
 }
 
 function renderTableau(tableau) {
-    for(let i = 0; i < 1; i++) {
+    for(let i = 0; i < tableau.length; i++) {
         const column = tableau[i];
 
         for(let j = 0; j < column.length; j++) {
             const card = column[j];
+            const isHalf = (j !== column.length - 1); // Only the last card is fully visible
             const { rank, suit } = getCardDisplay(card);
-            const cardElement = createCardElement(rank, suit);
+            const cardElement = createCardElement(rank, suit, isHalf);
             document.getElementById('tableau-' + i).appendChild(cardElement);
         }
     }
-    
 }    
 
 function flipCard(card) {

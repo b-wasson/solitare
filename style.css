@@ -49,8 +49,8 @@ body {
 }
 
 .tableau-col {
-    height: auto; 
-    min-height: 120px;
+    height: auto;
+    min-height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -65,25 +65,22 @@ body {
     gap: 10px;
 }
 
-
-.card-slot { 
-    width: 80px;
-    height: 120px;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #222;
+.card-red {
+    font-family: monospace;
+    color: #a855f7;
 }
 
-.card { 
-  width: 80px;
-  height: auto;
-  margin-top: -60px;
-  font-family: monospace;
+.card-black {
+    font-family: monospace;
+    color: #2dd4bf;
 }
 
-.card:first-child {
-  margin-top: 0;
+.card:hover {
+    outline: 2px solid yellow;
+    text-shadow: 0 0 8px yellow;
+    cursor: pointer;
+}
+
+.card-cursor {
+    outline: 2px solid gold;
 }
