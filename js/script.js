@@ -7,16 +7,19 @@ document.getElementById('start-button').addEventListener('click', function() {
     renderTableau(tableau);
 
     let cursorIndex = 0;
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.tableau-col .card:last-child');
     
-
     cards[cursorIndex].classList.add('card-cursor');
 
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Tab') {
-            event.preventDefault();
+        if (event.key === 'ArrowRight') {
             cards[cursorIndex].classList.remove('card-cursor');
             cursorIndex = (cursorIndex + 1) % cards.length;
+            cards[cursorIndex].classList.add('card-cursor');
+        }
+        if (event.key === 'ArrowLeft') {
+            cards[cursorIndex].classList.remove('card-cursor');
+            cursorIndex = (cursorIndex - 1 + cards.length) % cards.length;
             cards[cursorIndex].classList.add('card-cursor');
         }
     });

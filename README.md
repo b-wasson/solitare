@@ -1,1 +1,1 @@
-# solitare
+# solitaire

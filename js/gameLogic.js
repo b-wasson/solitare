@@ -12,12 +12,31 @@ function deal(deck) {
     return tableau;
 }
 
+function draw(deck) { 
+    if(deck.cards.length < 3) {
+        deck.cards = waste.concat(deck.cards);
+        waste = [];
+    }
+    let waste = [deck.cards.pop(), deck.cards.pop(), deck.cards.pop()]; // Draw 3 cards to waste
+    return waste;
+}
+
+function createBackCardElement() {
+    const top =   "┌─────────┐";
+    const bottom = "└─────────┘";
+    const back = "│░░░░░░░░░│";
+    
+    const pre = document.createElement('pre');
+    pre.classList.add('card');
+    pre.textContent = [top, back, back, back, back, back, bottom].join('\n');
+    return pre;
+
+}
+
 function createCardElement(rank, suit, isHalf = false) {
     const top =    "┌─────────┐";
     const bottom = "└─────────┘";
     const side =   "│         │";
-
-    const back = "░░░░░░░░░░░░░░"
     
     let rankLineLeft, rankLineRight;
     if (rank === '10') {
@@ -61,6 +80,12 @@ function renderTableau(tableau) {
         }
     }
 }    
+
+function renderDrawingDeck(deck) {
+
+
+
+}
 
 function flipCard(card) {
     card.faceUp = !card.faceUp;
